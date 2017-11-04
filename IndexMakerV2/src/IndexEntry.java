@@ -22,12 +22,21 @@ public class IndexEntry implements Comparable<IndexEntry>{
 		lineNums = new TreeSet<Integer>();
 	}
 	
+	public IndexEntry(IndexEntry e){
+		word = e.getWord();
+		lineNums = new TreeSet<Integer>(e.getLines());
+	}
+	
 	/**
 	 * 
 	 * @return String word
 	 */
 	public String getWord() {
 		return word;
+	}
+	
+	public TreeSet<Integer> getLines(){
+		return lineNums;
 	}
 	
 	/**
