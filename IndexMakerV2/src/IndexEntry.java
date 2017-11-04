@@ -9,7 +9,7 @@ import java.util.TreeSet;
 public class IndexEntry {
 	
 	private String word;
-	private ArrayList<Integer> numsList;
+	//private ArrayList<Integer> numsList;
 	private TreeSet<Integer> lineNums;
 	
 	/**
@@ -39,7 +39,7 @@ public class IndexEntry {
 
 	@Override
 	public String toString() {
-		return "IndexEntry for " + word + "Appears on lines: " + lineNums;
+		return "IndexEntry for " + word + " Appears on lines: " + lineNums;
 	}
 	
 	
