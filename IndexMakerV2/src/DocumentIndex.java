@@ -5,9 +5,10 @@
  */
 
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 @SuppressWarnings("serial")
-public class DocumentIndex extends ArrayList<IndexEntry> {
+public class DocumentIndex extends TreeMap<String, IndexEntry> {
 
 	public DocumentIndex() {
 		super();
