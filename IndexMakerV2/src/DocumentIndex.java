@@ -11,7 +11,7 @@ import java.util.TreeMap;
 public class DocumentIndex extends TreeMap<String, IndexEntry> {
 
 	public DocumentIndex() {
-		super();
+		super(new IndexEntryComparator());
 	}
 
 	/**
@@ -20,7 +20,7 @@ public class DocumentIndex extends TreeMap<String, IndexEntry> {
 	 *            Capacity
 	 */
 	public DocumentIndex(int cap) {
-		super(cap);
+		super();
 	}
 
 	/**
@@ -41,12 +41,12 @@ public class DocumentIndex extends TreeMap<String, IndexEntry> {
 			else if (compWord.compareTo(word) < 0)
 				i++;
 			else {
-				this.add(i, new IndexEntry(word));
+				this.put(word, new IndexEntry(word));
 				isInserted = true;
 				return i;
 			}
 		}
-		this.add(new IndexEntry(word));
+		this.put(word,new IndexEntry(word));
 		return i;
 	}
 

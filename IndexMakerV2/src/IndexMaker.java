@@ -17,7 +17,9 @@ import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.Scanner;
+import java.util.Set;
 
 public class IndexMaker
 {
@@ -65,9 +67,9 @@ public class IndexMaker
     }
 
     // Save index:
-
-    for (IndexEntry entry : index)
-      outputFile.println(entry);
+    Set<String> keyVal = index.keySet();
+    for (String entry : keyVal)
+      outputFile.println(index.get(entry));
 
     // Finish:
 

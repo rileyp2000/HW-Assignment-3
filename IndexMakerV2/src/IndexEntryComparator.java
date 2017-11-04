@@ -8,7 +8,7 @@ import java.util.Comparator;
  * @author Patrick
  *
  */
-public class IndexEntryComparator implements Comparator<IndexEntry>{
+public class IndexEntryComparator implements Comparator<String>{
 	
 	boolean ascend;
 	
@@ -21,7 +21,7 @@ public class IndexEntryComparator implements Comparator<IndexEntry>{
 	}
 	
 	@Override
-	public int compare(IndexEntry i1, IndexEntry i2) {
+	public int compare(String i1, String i2) {
 		return  i1.compareTo(i2);
 	}
 
