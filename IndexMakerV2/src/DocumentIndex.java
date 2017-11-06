@@ -31,7 +31,7 @@ public class DocumentIndex extends TreeMap<String, IndexEntry> {
 	 *            word to find if inserted
 	 * @return int index of return
 	 */
-	private void foundOrInserted(String word) {
+	private void foundOrInserted(String word, int line) {
 		word = word.toUpperCase();
 		boolean isInserted = false;
 		
@@ -48,11 +48,17 @@ public class DocumentIndex extends TreeMap<String, IndexEntry> {
 			}
 			else {
 				this.put(word, new IndexEntry(word));
+				IndexEntry toAdd = new IndexEntry(word);
+				toAdd.add(line);
+				//System.out.println(this);
 				isInserted = true;
 				return;
 			}
 		}
-		this.put(word,new IndexEntry(word));
+		IndexEntry toAdd = new IndexEntry(word);
+		toAdd.add(line);
+		this.put(word, toAdd);
+		//System.out.println(this);
 		return;
 	}
 
@@ -64,10 +70,13 @@ public class DocumentIndex extends TreeMap<String, IndexEntry> {
 	 *            on this page line
 	 */
 	public void addWord(String word, int num) {
-		foundOrInserted(word);
+		foundOrInserted(word,num);
+		System.out.println(this);
+		//this.get(word).add(num);
+		/*IndexEntry wordsd = this.get(word);
 		IndexEntry toBeAppended = new IndexEntry(this.get(word));
 		toBeAppended.add(num);
-		this.put(word, toBeAppended);
+		this.put(word, toBeAppended);*/
 		
 	}
 
