@@ -25,12 +25,21 @@ public class IndexEntry implements Comparable<IndexEntry> {
 		word = wd.toUpperCase();
 		lineNums = new TreeSet<Integer>();
 	}
-
+	
+	/**
+	 * copy constructor for an IndexEntry
+	 * @param e Index entry to be copied
+	 */
 	public IndexEntry(IndexEntry e) {
 		word = e.getWord();
 		lineNums = new TreeSet<Integer>(e.getLines());
 	}
-
+	
+	/**
+	 * creates an indexEntry with a line number
+	 * @param wd word for the entry
+	 * @param num line number for the entry
+	 */
 	public IndexEntry(String wd, int num) {
 		word = wd.toUpperCase();
 		lineNums = new TreeSet<Integer>();
@@ -45,7 +54,11 @@ public class IndexEntry implements Comparable<IndexEntry> {
 	public String getWord() {
 		return word;
 	}
-
+	
+	/**
+	 * Gets the TreeSet of lines
+	 * @return TreeSet<Integer> the set of line numbers
+	 */
 	public TreeSet<Integer> getLines() {
 		return lineNums;
 	}

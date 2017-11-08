@@ -11,35 +11,46 @@ import java.util.TreeMap;
 @SuppressWarnings("serial")
 public class DocumentIndex extends TreeMap<String, IndexEntry> {
 
+	/**
+	 * creates a DocumentIndex with a comparator
+	 */
 	public DocumentIndex() {
 		super(new IndexEntryComparator());
 	}
 
 	/**
-	 * 
-	 * @param cap
-	 *            Capacity
-	 */
-	public DocumentIndex(int cap) {
-		super();
-	}
-
-	/**
+	 * This method adds the line number of a specific words to an Index Entry,
+	 * and creates one if it doesn't exist already
 	 * 
 	 * @param word
 	 *            word to find if inserted
-	 * @return int index of return
+	 * @param line
+	 *            the line number that the word occurs on
+	 * 
 	 */
-	private void foundOrInserted(String word, int line) {
-		word = word.toUpperCase();
-		//boolean isInserted = false;
 
+	/**
+	 * This method adds the line number of a specific words to an Index Entry,
+	 * and creates one if it doesn't exist already
+	 * 
+	 * @param word
+	 *            word to find if inserted
+	 * @param line
+	 *            the line number that the word occurs on
+	 * 
+	 */
+	public void addWord(String word, int line) {
+		
+		word = word.toUpperCase();
 		String compWord = "";
 
+		// creates a set of keys and an iterator to allow traversal of the Index
 		Set<String> keys = this.keySet();
 		Iterator<String> iter = keys.iterator();
 
-		while (iter.hasNext() /*&& !isInserted*/) {
+		// Iterates through the index, looking for the proper place to insert
+		// the IndexEntry
+		while (iter.hasNext()) {
 			compWord = super.get(iter.next()).getWord();
 
 			if (compWord.equals(word)) {
@@ -47,38 +58,17 @@ public class DocumentIndex extends TreeMap<String, IndexEntry> {
 				return;
 			} else {
 				if (compWord.compareTo(word) < 0) {
-					//break;
+
 				} else {
-					if(!this.containsKey(word))
+					if (!this.containsKey(word))
 						this.put(word, new IndexEntry(word));
 					this.get(word).add(line);
-					// System.out.println(this);
-					// isInserted = true;
 					return;
 				}
 			}
 		}
-		this.put(word, new IndexEntry(word,line));
-		// System.out.println(this);
+		this.put(word, new IndexEntry(word, line));
 		return;
-	}
-
-	/**
-	 * 
-	 * @param word
-	 *            add this word
-	 * @param num
-	 *            on this page line
-	 */
-	public void addWord(String word, int num) {
-		foundOrInserted(word, num);
-		// System.out.println(this);
-		// this.get(word).add(num);
-		/*
-		 * IndexEntry wordsd = this.get(word); IndexEntry toBeAppended = new
-		 * IndexEntry(this.get(word)); toBeAppended.add(num); this.put(word,
-		 * toBeAppended);
-		 */
 
 	}
 
