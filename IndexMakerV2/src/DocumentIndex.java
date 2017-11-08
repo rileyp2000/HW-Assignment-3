@@ -32,38 +32,34 @@ public class DocumentIndex extends TreeMap<String, IndexEntry> {
 	 */
 	private void foundOrInserted(String word, int line) {
 		word = word.toUpperCase();
-		boolean isInserted = false;
-		
+		//boolean isInserted = false;
+
 		String compWord = "";
-		
+
 		Set<String> keys = this.keySet();
 		Iterator<String> iter = keys.iterator();
-		
-		while (iter.hasNext() && !isInserted) {
-			keys = this.keySet();
-			iter = keys.iterator();
+
+		while (iter.hasNext() /*&& !isInserted*/) {
 			compWord = super.get(iter.next()).getWord();
-			
-			if (compWord.equals(word)){
+
+			if (compWord.equals(word)) {
 				this.get(word).add(line);
 				return;
-			}
-			else if (compWord.compareTo(word) < 0){
-				break;
-			}
-			else {
-				this.put(word, new IndexEntry(word));
-				IndexEntry toAdd = new IndexEntry(word);
-				this.get(word).add(line);
-				//System.out.println(this);
-				isInserted = true;
-				return;
+			} else {
+				if (compWord.compareTo(word) < 0) {
+					break;
+				} else {
+					if(!this.containsKey(word))
+						this.put(word, new IndexEntry(word));
+					this.get(word).add(line);
+					// System.out.println(this);
+					// isInserted = true;
+					return;
+				}
 			}
 		}
-		IndexEntry toAdd = new IndexEntry(word);
-		toAdd.add(line);
-		this.put(word, toAdd);
-		//System.out.println(this);
+		this.put(word, new IndexEntry(word,line));
+		// System.out.println(this);
 		return;
 	}
 
@@ -75,14 +71,15 @@ public class DocumentIndex extends TreeMap<String, IndexEntry> {
 	 *            on this page line
 	 */
 	public void addWord(String word, int num) {
-		foundOrInserted(word,num);
-		//System.out.println(this);
-		//this.get(word).add(num);
-		/*IndexEntry wordsd = this.get(word);
-		IndexEntry toBeAppended = new IndexEntry(this.get(word));
-		toBeAppended.add(num);
-		this.put(word, toBeAppended);*/
-		
+		foundOrInserted(word, num);
+		// System.out.println(this);
+		// this.get(word).add(num);
+		/*
+		 * IndexEntry wordsd = this.get(word); IndexEntry toBeAppended = new
+		 * IndexEntry(this.get(word)); toBeAppended.add(num); this.put(word,
+		 * toBeAppended);
+		 */
+
 	}
 
 	/**
