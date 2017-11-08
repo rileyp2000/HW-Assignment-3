@@ -47,7 +47,7 @@ public class DocumentIndex extends TreeMap<String, IndexEntry> {
 				return;
 			} else {
 				if (compWord.compareTo(word) < 0) {
-					break;
+					//break;
 				} else {
 					if(!this.containsKey(word))
 						this.put(word, new IndexEntry(word));
