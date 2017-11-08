@@ -4,7 +4,6 @@
  * @author Patrick Riley
  */
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeMap;
@@ -36,20 +35,26 @@ public class DocumentIndex extends TreeMap<String, IndexEntry> {
 		boolean isInserted = false;
 		
 		String compWord = "";
+		
 		Set<String> keys = this.keySet();
 		Iterator<String> iter = keys.iterator();
+		
 		while (iter.hasNext() && !isInserted) {
 			keys = this.keySet();
+			iter = keys.iterator();
 			compWord = super.get(iter.next()).getWord();
-			if (compWord.equals(word))
+			
+			if (compWord.equals(word)){
+				this.get(word).add(line);
 				return;
+			}
 			else if (compWord.compareTo(word) < 0){
 				break;
 			}
 			else {
 				this.put(word, new IndexEntry(word));
 				IndexEntry toAdd = new IndexEntry(word);
-				toAdd.add(line);
+				this.get(word).add(line);
 				//System.out.println(this);
 				isInserted = true;
 				return;
@@ -71,7 +76,7 @@ public class DocumentIndex extends TreeMap<String, IndexEntry> {
 	 */
 	public void addWord(String word, int num) {
 		foundOrInserted(word,num);
-		System.out.println(this);
+		//System.out.println(this);
 		//this.get(word).add(num);
 		/*IndexEntry wordsd = this.get(word);
 		IndexEntry toBeAppended = new IndexEntry(this.get(word));

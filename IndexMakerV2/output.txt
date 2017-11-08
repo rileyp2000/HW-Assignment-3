@@ -1,6 +1,6 @@
-IndexEntry for A Appears on lines: []
+IndexEntry for A Appears on lines: [12, 14, 15]
 IndexEntry for ARE Appears on lines: [16]
-IndexEntry for BLACK Appears on lines: []
+IndexEntry for BLACK Appears on lines: [6]
 IndexEntry for BLUE Appears on lines: [7]
 IndexEntry for CAR Appears on lines: [14]
 IndexEntry for FISH Appears on lines: [16]
