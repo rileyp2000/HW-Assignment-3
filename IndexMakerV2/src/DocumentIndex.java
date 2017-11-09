@@ -28,20 +28,9 @@ public class DocumentIndex extends TreeMap<String, IndexEntry> {
 	 *            the line number that the word occurs on
 	 * 
 	 */
-
-	/**
-	 * This method adds the line number of a specific words to an Index Entry, and
-	 * creates one if it doesn't exist already
-	 * 
-	 * @param word
-	 *            word to find if inserted
-	 * @param line
-	 *            the line number that the word occurs on
-	 * 
-	 */
 	public void addWord(String word, int line) {
 
-		/*
+		/* WHY IS MY LIFE SO BAD
 		 * word = word.toUpperCase(); String compWord = "";
 		 * 
 		 * // creates a set of keys and an iterator to allow traversal of the Index

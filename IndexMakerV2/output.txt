@@ -1,21 +1,22 @@
-IndexEntry for BLACK Appears on lines: [6]
-IndexEntry for ONE Appears on lines: [1]
-IndexEntry for SAY Appears on lines: [15]
-IndexEntry for THIS Appears on lines: [11, 14]
-IndexEntry for WHAT Appears on lines: [15]
-IndexEntry for A Appears on lines: [12, 14, 15]
-IndexEntry for ARE Appears on lines: [16]
-IndexEntry for BLUE Appears on lines: [4, 7]
-IndexEntry for CAR Appears on lines: [14]
-IndexEntry for FISH Appears on lines: [1, 2, 3, 4, 6, 7, 8, 9, 16]
-IndexEntry for HAS Appears on lines: [11, 14]
-IndexEntry for LITTLE Appears on lines: [12, 14]
-IndexEntry for LOT Appears on lines: [15]
-IndexEntry for NEW Appears on lines: [9]
-IndexEntry for OF Appears on lines: [16]
-IndexEntry for OLD Appears on lines: [8]
-IndexEntry for ONE Appears on lines: [11, 14]
-IndexEntry for RED Appears on lines: [3]
-IndexEntry for STAR Appears on lines: [12]
-IndexEntry for THERE Appears on lines: [16]
-IndexEntry for TWO Appears on lines: [2]
+Index for fish.txt: 
+BLACK 6
+ONE 1
+SAY 15
+THIS 11, 14
+WHAT 15
+A 12, 14, 15
+ARE 16
+BLUE 4, 7
+CAR 14
+FISH 1, 2, 3, 4, 6, 7, 8, 9, 16
+HAS 11, 14
+LITTLE 12, 14
+LOT 15
+NEW 9
+OF 16
+OLD 8
+ONE 11, 14
+RED 3
+STAR 12
+THERE 16
+TWO 2

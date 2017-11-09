@@ -80,7 +80,7 @@ public class IndexEntry implements Comparable<IndexEntry> {
 
 	@Override
 	public String toString() {
-		return "IndexEntry for " + word + " Appears on lines: " + lineNums;
+		return word + " " + lineNums.toString().substring(1, lineNums.toString().length()-1 );
 	}
 
 }
