@@ -19,8 +19,8 @@ public class DocumentIndex extends TreeMap<String, IndexEntry> {
 	}
 
 	/**
-	 * This method adds the line number of a specific words to an Index Entry,
-	 * and creates one if it doesn't exist already
+	 * This method adds the line number of a specific words to an Index Entry, and
+	 * creates one if it doesn't exist already
 	 * 
 	 * @param word
 	 *            word to find if inserted
@@ -30,8 +30,8 @@ public class DocumentIndex extends TreeMap<String, IndexEntry> {
 	 */
 
 	/**
-	 * This method adds the line number of a specific words to an Index Entry,
-	 * and creates one if it doesn't exist already
+	 * This method adds the line number of a specific words to an Index Entry, and
+	 * creates one if it doesn't exist already
 	 * 
 	 * @param word
 	 *            word to find if inserted
@@ -40,35 +40,30 @@ public class DocumentIndex extends TreeMap<String, IndexEntry> {
 	 * 
 	 */
 	public void addWord(String word, int line) {
-		
-		word = word.toUpperCase();
-		String compWord = "";
 
-		// creates a set of keys and an iterator to allow traversal of the Index
-		Set<String> keys = this.keySet();
-		Iterator<String> iter = keys.iterator();
+		/*
+		 * word = word.toUpperCase(); String compWord = "";
+		 * 
+		 * // creates a set of keys and an iterator to allow traversal of the Index
+		 * Set<String> keys = this.keySet(); Iterator<String> iter = keys.iterator();
+		 * 
+		 * // Iterates through the index, looking for the proper place to insert // the
+		 * IndexEntry while (iter.hasNext()) { compWord =
+		 * super.get(iter.next()).getWord();
+		 * 
+		 * if (compWord.equals(word)) { this.get(word).add(line); return; } else { if
+		 * (compWord.compareTo(word) < 0) {
+		 * 
+		 * } else { if (!this.containsKey(word)) this.put(word, new IndexEntry(word));
+		 * this.get(word).add(line); return; } } } this.put(word, new IndexEntry(word,
+		 * line)); return;
+		 */
 
-		// Iterates through the index, looking for the proper place to insert
-		// the IndexEntry
-		while (iter.hasNext()) {
-			compWord = super.get(iter.next()).getWord();
-
-			if (compWord.equals(word)) {
-				this.get(word).add(line);
-				return;
-			} else {
-				if (compWord.compareTo(word) < 0) {
-
-				} else {
-					if (!this.containsKey(word))
-						this.put(word, new IndexEntry(word));
-					this.get(word).add(line);
-					return;
-				}
-			}
+		if (this.containsKey(word)) {
+			this.get(word).add(line);
+		} else {
+			this.put(word, new IndexEntry(word, line));
 		}
-		this.put(word, new IndexEntry(word, line));
-		return;
 
 	}
 
