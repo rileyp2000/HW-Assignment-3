@@ -2,7 +2,7 @@
 import java.util.TreeSet;
 
 /**
- * <p>
+ * <p>this class represents an entry in the index with its word and its line numbers
  * </p>
  * 
  * @author Patrick Riley
