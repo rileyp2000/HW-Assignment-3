@@ -29,7 +29,7 @@ public class DocumentIndex extends TreeMap<String, IndexEntry> {
 	 * 
 	 */
 	public void addWord(String word, int line) {
-
+		word = word.toUpperCase();
 		/* WHY IS MY LIFE SO BAD
 		 * word = word.toUpperCase(); String compWord = "";
 		 * 
