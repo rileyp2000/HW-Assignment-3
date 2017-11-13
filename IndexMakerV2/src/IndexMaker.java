@@ -40,6 +40,8 @@ public class IndexMaker
     BufferedReader inputFile =
                  new BufferedReader(new FileReader(fileName), 1024);
 
+    String readInFile = fileName;
+    
     // Create output file:
 
     if (args.length > 1)
@@ -53,6 +55,29 @@ public class IndexMaker
     PrintWriter outputFile =
                  new PrintWriter(new FileWriter(fileName));
 
+    
+    
+    /*outputFile.println("***Tests for IndexMaker***\n\n");
+    
+    IndexEntry n1 = new IndexEntry("hello");
+	n1.add(0);
+	n1.add(1);
+	n1.add(2);
+	n1.add(3);
+	outputFile.println(n1);
+	
+    IndexEntry n2 = new IndexEntry("test 2", 4);
+    outputFile.println(n2);
+    
+    IndexEntry n3 = new IndexEntry(n2);
+    outputFile.println("Copy of the previous IndexEntry: " + n3);
+    
+    outputFile.println("Compare n1 and n2: " + n1.compareTo(n2));
+    
+    outputFile.println("\n\n**Tests for DocumentIndex***\n\n");*/
+    
+    
+    
     // Create index:
 
     DocumentIndex index = new DocumentIndex();
@@ -66,6 +91,7 @@ public class IndexMaker
     }
 
     // Save index:
+    outputFile.println("Index for " + readInFile + ": ");
     Set<String> keyVal = index.keySet();
     for (String entry : keyVal)
       outputFile.println(index.get(entry));

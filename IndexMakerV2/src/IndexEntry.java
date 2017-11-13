@@ -2,7 +2,7 @@
 import java.util.TreeSet;
 
 /**
- * <p>
+ * <p>this class represents an entry in the index with its word and its line numbers
  * </p>
  * 
  * @author Patrick Riley
@@ -80,7 +80,7 @@ public class IndexEntry implements Comparable<IndexEntry> {
 
 	@Override
 	public String toString() {
-		return "IndexEntry for " + word + " Appears on lines: " + lineNums;
+		return word + " " + lineNums.toString().substring(1, lineNums.toString().length()-1 );
 	}
 
 }
