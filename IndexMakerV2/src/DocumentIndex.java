@@ -30,11 +30,10 @@ public class DocumentIndex extends TreeMap<String, IndexEntry> {
 	 */
 	public void addWord(String word, int line) {
 		word = word.toUpperCase();
-		if (this.containsKey(word)) {
+		if (this.containsKey(word))
 			this.get(word).add(line);
-		} else {
+		else
 			this.put(word, new IndexEntry(word, line));
-		}
 
 	}
 
