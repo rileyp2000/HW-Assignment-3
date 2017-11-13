@@ -1,2 +1,15 @@
+***Tests for IndexMaker***
+
+
+New IndexEntry for word 'hello' on lines 0,1,2, and 3: HELLO 0, 1, 2, 3
+New IndexEntry for word 'test' on line 4: TEST 4
+Copy of the previous IndexEntry: TEST 4
+Compare n1 and n2: -12
+
+
+**Tests for DocumentIndex***
+
+
 Index for AllOneWord.txt: 
 PYTHON 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14
+

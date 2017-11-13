@@ -51,4 +51,13 @@ public class DocumentIndex extends TreeMap<String, IndexEntry> {
 				addWord(s, num);
 		}
 	}
+	
+	@Override
+	public String toString() {
+		String ret = "";
+		Set<String> keyVal = keySet();
+	    for (String entry : keyVal)
+	      ret += get(entry) + "\n";
+	    return ret;
+	}
 }
