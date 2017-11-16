@@ -57,7 +57,7 @@ public class IndexEntry implements Comparable<IndexEntry> {
 	
 	/**
 	 * Gets the TreeSet of lines
-	 * @return TreeSet<Integer> the set of line numbers
+	 * @return TreeSet the set of line numbers
 	 */
 	public TreeSet<Integer> getLines() {
 		return lineNums;
